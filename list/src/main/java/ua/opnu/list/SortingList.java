@@ -128,9 +128,15 @@ public class SortingList extends Application {
             }
         });
 
-        // TODO: Обробка натискання на кнопку "Сортувати за прізвищем"
+        sortByLastNameButton.setOnAction(e -> {
+            students.sort(new LastNameSorter(order[0]));
+            order[0] = !order[0];
+        });
 
-        // TODO: Обробка натискання на кнопку "Сортувати за оцінкою"
+        sortByMarkButton.setOnAction(e -> {
+            students.sort(new MarkSorter(order[0]));
+            order[0] = !order[0];
+        });
 
         // Створюємо горизонтальний ряд
         HBox hb = new HBox();
